@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Preço Certo — a calculadora de preço feita pra marmiteira</title>
+  <meta name="description"
+    content="Descubra em 1 minuto quanto cobrar por cada marmita, sem prejuízo e sem planilha. Calculadora no celular + guia em PDF. R$37, pagamento único.">
+  <meta name="theme-color" content="#C1502E">
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1121235693689365');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1121235693689365&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <!-- ============================================================
+     TROQUE AQUI: link do seu checkout (Hotmart, Kiwify, Braip...)
+     Todos os botões da página usam esta constante.
+     ============================================================ -->
+  <script>
+    const LINK_CHECKOUT = "https://pay.cakto.com.br/35dgsa8_1077031";
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #FBF6EE;
+      --paper: #FFFFFF;
+      --ink: #2A211B;
+      --ink-soft: #5F5247;
+      --brand: #C1502E;
+      --brand-dark: #9F3D1F;
+      --accent: #3E6B4F;
+      --accent-soft: #EAF1EB;
+      --gold: #C98A16;
+      --line: #E8DCCB;
+      --shadow: 0 2px 4px rgba(42, 33, 27, .06), 0 8px 24px rgba(42, 33, 27, .08);
+      --radius: 14px;
+      color-scheme: light;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      -webkit-text-size-adjust: 100%
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      display: block
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Bitter", Georgia, "Times New Roman", serif;
+      line-height: 1.18;
+      margin: 0 0 .5em;
+      letter-spacing: -.01em
+    }
+
+    h1 {
+      font-size: clamp(1.9rem, 7.2vw, 3.1rem);
+      font-weight: 700
+    }
+
+    h2 {
+      font-size: clamp(1.5rem, 5.4vw, 2.3rem);
+      font-weight: 700
+    }
+
+    h3 {
+      font-size: clamp(1.12rem, 3.6vw, 1.35rem);
+      font-weight: 600
+    }
+
+    p {
+      margin: 0 0 1em
+    }
+
+    strong {
+      font-weight: 700
+    }
+
+    .wrap {
+      width: 100%;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 20px
+    }
+
+    .wrap-wide {
+      max-width: 1000px
+    }
+
+    section {
+      padding: 56px 0
+    }
+
+    @media(min-width:768px) {
+      body {
+        font-size: 18px
+      }
+
+      section {
+        padding: 80px 0
+      }
+    }
+
+    /* ---------- BOTAO ---------- */
+    .btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: var(--brand);
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.06rem;
+      font-weight: 700;
+      line-height: 1.3;
+      padding: 19px 22px;
+      border-radius: 12px;
+      border: 0;
+      box-shadow: 0 4px 0 var(--brand-dark), 0 10px 20px rgba(193, 80, 46, .25);
+      transition: transform .08s ease, box-shadow .08s ease;
+      cursor: pointer;
+    }
+
+    .btn:active {
+      transform: translateY(3px);
+      box-shadow: 0 1px 0 var(--brand-dark), 0 4px 10px rgba(193, 80, 46, .2)
+    }
+
+    .btn:hover {
+      background: #CB5731
+    }
+
+    @media(min-width:600px) {
+      .btn {
+        display: inline-block;
+        width: auto;
+        min-width: 340px;
+        font-size: 1.15rem;
+        padding: 21px 40px
+      }
+    }
+
+    .btn-note {
+      font-size: .92rem;
+      color: var(--ink-soft);
+      margin: 12px 0 0
+    }
+
+    .center {
+      text-align: center
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      background: linear-gradient(180deg, #FFF9F1 0%, var(--cream) 100%);
+      border-bottom: 1px solid var(--line);
+      padding: 34px 0 46px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      padding: 7px 13px;
+      border-radius: 99px;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      margin-bottom: .45em
+    }
+
+    .hero .sub {
+      font-size: 1.08rem;
+      color: var(--ink-soft);
+      max-width: 36em;
+      margin-bottom: 28px
+    }
+
+    @media(min-width:768px) {
+      .hero {
+        padding: 56px 0 72px
+      }
+
+      .hero .sub {
+        font-size: 1.2rem
+      }
+    }
+
+    .hero-marks {
+      list-style: none;
+      padding: 0;
+      margin: 18px 0 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      font-size: .92rem;
+      color: var(--ink-soft)
+    }
+
+    .hero-marks li {
+      display: flex;
+      align-items: center;
+      gap: 7px
+    }
+
+    .hero-marks svg {
+      flex: none
+    }
+
+    /* ---------- LISTA DE DORES ---------- */
+    .pain {
+      background: var(--paper);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line)
+    }
+
+    .pain-list {
+      list-style: none;
+      padding: 0;
+      margin: 28px 0 0;
+      display: grid;
+      gap: 14px
+    }
+
+    .pain-list li {
+      background: var(--cream);
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--brand);
+      border-radius: 10px;
+      padding: 16px 18px;
+      font-size: 1.02rem;
+    }
+
+    .pain-close {
+      margin-top: 28px;
+      font-size: 1.08rem;
+      font-weight: 600
+    }
+
+    /* ---------- VIRADA ---------- */
+    .turn {
+      background: var(--ink);
+      color: #F6EFE6
+    }
+
+    .turn h2 {
+      color: #fff
+    }
+
+    .turn p {
+      color: #DDD1C4
+    }
+
+    .turn .hl {
+      color: #F2B24C;
+      font-weight: 700
+    }
+
+    /* ---------- PASSOS ---------- */
+    .step {
+      margin: 0 0 34px
+    }
+
+    .step:last-child {
+      margin-bottom: 0
+    }
+
+    .step-head {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 14px
+    }
+
+    .step-num {
+      flex: none;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--brand);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.05rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .step-head h3 {
+      margin: 0
+    }
+
+    .step p {
+      color: var(--ink-soft);
+      margin: 0 0 14px
+    }
+
+    @media(min-width:768px) {
+      .step {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 34px;
+        align-items: center;
+        margin-bottom: 56px
+      }
+
+      .step:nth-child(odd) .step-media {
+        order: -1
+      }
+    }
+
+    /* ---------- PLACEHOLDER DE IMAGEM (trocar por print real) ---------- */
+    .ph {
+      border: 2px dashed #C9B79C;
+      background: #FFFDF9;
+      border-radius: var(--radius);
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+      color: #93826C;
+      font-size: .88rem;
+      line-height: 1.45;
+    }
+
+    .ph b {
+      display: block;
+      color: #6E5C46;
+      font-size: .95rem;
+      margin-bottom: 4px
+    }
+
+    .ph-avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      min-height: 0;
+      font-size: .62rem;
+      padding: 4px
+    }
+
+    /* ---------- INCLUSO ---------- */
+    .included {
+      background: var(--paper);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line)
+    }
+
+    .card {
+      background: var(--cream);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px 20px;
+      margin-bottom: 16px;
+    }
+
+    .card h3 {
+      margin-bottom: 8px
+    }
+
+    .card .kicker {
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: var(--brand);
+      margin-bottom: 8px
+    }
+
+    .check {
+      list-style: none;
+      padding: 0;
+      margin: 14px 0 0;
+      display: grid;
+      gap: 10px
+    }
+
+    .check li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 1rem;
+      color: var(--ink-soft)
+    }
+
+    .check svg {
+      flex: none;
+      margin-top: 4px
+    }
+
+    @media(min-width:768px) {
+      .cards-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px
+      }
+
+      .cards-2 .card {
+        margin: 0
+      }
+    }
+
+    /* ---------- COMPARATIVO ---------- */
+    .compare {
+      display: grid;
+      gap: 16px;
+      margin-top: 28px
+    }
+
+    @media(min-width:768px) {
+      .compare {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px
+      }
+    }
+
+    .col {
+      border-radius: var(--radius);
+      padding: 24px 20px;
+      border: 1px solid var(--line);
+      background: var(--paper)
+    }
+
+    .col.bad {
+      background: #F7F2EA
+    }
+
+    .col.good {
+      border-color: #BFD5C4;
+      background: var(--accent-soft);
+      box-shadow: var(--shadow)
+    }
+
+    .col h3 {
+      font-size: 1.1rem;
+      margin-bottom: 14px
+    }
+
+    .col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 11px;
+      font-size: .99rem
+    }
+
+    .col li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: var(--ink-soft)
+    }
+
+    .col.good li {
+      color: #2E4A38
+    }
+
+    .mark {
+      flex: none;
+      font-weight: 700;
+      width: 20px
+    }
+
+    .col.bad .mark {
+      color: #A6705A
+    }
+
+    .col.good .mark {
+      color: var(--accent)
+    }
+
+    /* ---------- DEPOIMENTOS ---------- */
+    .tt {
+      display: grid;
+      gap: 16px;
+      margin-top: 28px
+    }
+
+    @media(min-width:900px) {
+      .tt {
+        grid-template-columns: repeat(3, 1fr)
+      }
+    }
+
+    .tt-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px 20px;
+      box-shadow: var(--shadow)
+    }
+
+    .tt-stars {
+      color: var(--gold);
+      letter-spacing: 2px;
+      font-size: .95rem;
+      margin-bottom: 10px
+    }
+
+    .tt-text {
+      font-size: 1rem;
+      color: var(--ink-soft);
+      min-height: 76px;
+      margin-bottom: 16px
+    }
+
+    .tt-who {
+      display: flex;
+      align-items: center;
+      gap: 12px
+    }
+
+    .tt-name {
+      font-size: .9rem;
+      line-height: 1.35
+    }
+
+    .tt-name b {
+      display: block;
+      color: var(--ink)
+    }
+
+    .tt-name span {
+      color: var(--ink-soft);
+      font-size: .84rem
+    }
+
+    /* ---------- OFERTA ---------- */
+    .offer {
+      background: var(--ink);
+      color: #F6EFE6;
+      text-align: center
+    }
+
+    .offer h2 {
+      color: #fff
+    }
+
+    .offer p {
+      color: #DDD1C4
+    }
+
+    .price-box {
+      background: #fff;
+      color: var(--ink);
+      border-radius: var(--radius);
+      padding: 28px 20px;
+      margin: 26px 0 0;
+      box-shadow: 0 14px 34px rgba(0, 0, 0, .3);
+    }
+
+    .price-old {
+      color: #9A8B7C;
+      text-decoration: line-through;
+      font-size: 1.05rem
+    }
+
+    .price-now {
+      font-family: "Bitter", Georgia, serif;
+      font-size: clamp(2.6rem, 12vw, 3.6rem);
+      font-weight: 700;
+      line-height: 1;
+      margin: 6px 0 4px;
+      color: var(--brand)
+    }
+
+    .price-cond {
+      font-size: .98rem;
+      color: var(--ink-soft);
+      margin-bottom: 22px
+    }
+
+    .price-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 24px;
+      text-align: left;
+      display: grid;
+      gap: 9px;
+      font-size: .98rem
+    }
+
+    .price-list li {
+      display: flex;
+      gap: 9px;
+      align-items: flex-start
+    }
+
+    .price-list svg {
+      flex: none;
+      margin-top: 4px
+    }
+
+    @media(min-width:600px) {
+      .price-box {
+        padding: 36px 32px
+      }
+
+      .price-list {
+        max-width: 26em;
+        margin-left: auto;
+        margin-right: auto
+      }
+    }
+
+    /* ---------- GARANTIA ---------- */
+    .guarantee {
+      background: var(--paper);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line)
+    }
+
+    .g-box {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      background: var(--accent-soft);
+      border: 1px solid #CBDDD0;
+      border-radius: var(--radius);
+      padding: 24px 20px
+    }
+
+    .g-seal {
+      flex: none;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      line-height: 1;
+      text-align: center;
+    }
+
+    .g-seal b {
+      font-size: 1.35rem
+    }
+
+    .g-seal span {
+      font-size: .62rem;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      margin-top: 2px
+    }
+
+    .g-box h3 {
+      margin-bottom: 6px
+    }
+
+    .g-box p {
+      margin: 0;
+      color: #3B4F41;
+      font-size: 1rem
+    }
+
+    /* ---------- FAQ ---------- */
+    .faq {
+      margin-top: 26px;
+      border-top: 1px solid var(--line)
+    }
+
+    .faq details {
+      border-bottom: 1px solid var(--line)
+    }
+
+    .faq summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 18px 40px 18px 0;
+      position: relative;
+      font-weight: 600;
+      font-size: 1.03rem;
+    }
+
+    .faq summary::-webkit-details-marker {
+      display: none
+    }
+
+    .faq summary::after {
+      content: "+";
+      position: absolute;
+      right: 6px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--brand);
+      line-height: 1;
+    }
+
+    .faq details[open] summary::after {
+      content: "\2013"
+    }
+
+    .faq .ans {
+      padding: 0 0 18px;
+      color: var(--ink-soft);
+      font-size: 1rem
+    }
+
+    .faq .ans p:last-child {
+      margin-bottom: 0
+    }
+
+    /* ---------- CTA FINAL ---------- */
+    .final {
+      background: linear-gradient(180deg, var(--cream) 0%, #FFF3E6 100%);
+      text-align: center;
+      border-top: 1px solid var(--line)
+    }
+
+    /* ---------- RODAPE ---------- */
+    footer {
+      background: var(--ink);
+      color: #B6A897;
+      font-size: .87rem;
+      padding: 34px 0;
+      text-align: center
+    }
+
+    footer a {
+      color: #DDD1C4
+    }
+
+    footer p {
+      margin: 0 0 8px
+    }
+
+    footer .fine {
+      font-size: .79rem;
+      color: #8B7E6F;
+      margin-top: 16px;
+      line-height: 1.55
+    }
+
+    /* ---------- BARRA FIXA MOBILE ---------- */
+    .sticky {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 50;
+      background: #FFFBF5;
+      border-top: 1px solid var(--line);
+      padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+      box-shadow: 0 -6px 20px rgba(42, 33, 27, .12);
+      transform: translateY(110%);
+      transition: transform .25s ease;
+      text-align: center;
+    }
+
+    .sticky.on {
+      transform: translateY(0)
+    }
+
+    .sticky .btn {
+      padding: 16px;
+      font-size: 1rem;
+      box-shadow: 0 3px 0 var(--brand-dark)
+    }
+
+    .sticky .mini {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      font-size: .8rem;
+      color: var(--ink-soft);
+      margin-top: 7px
+    }
+
+    .sticky .mini s {
+      color: #A2937F
+    }
+
+    @media(min-width:900px) {
+      .sticky {
+        display: none
+      }
+    }
+
+    /* ---------- FOMO CARD ---------- */
+    .fomo {
+      position: fixed;
+      bottom: 80px;
+      left: 16px;
+      z-index: 100;
+      max-width: 290px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      box-shadow: 0 8px 32px rgba(42, 33, 27, .16);
+      padding: 13px 14px 13px 12px;
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      transform: translateX(calc(-100% - 24px));
+      opacity: 0;
+      transition: transform .42s cubic-bezier(.34, 1.28, .64, 1), opacity .3s ease;
+      pointer-events: none;
+    }
+
+    .fomo.show {
+      transform: translateX(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .fomo-icon {
+      font-size: 1.55rem;
+      line-height: 1;
+      flex: none;
+    }
+
+    .fomo-body {
+      font-size: .85rem;
+      line-height: 1.4;
+      color: var(--ink);
+    }
+
+    .fomo-body strong {
+      color: var(--brand);
+      font-size: .92rem;
+    }
+
+    .fomo-time {
+      font-size: .73rem;
+      color: var(--ink-soft);
+      margin-top: 2px;
+    }
+
+    .fomo-close {
+      position: absolute;
+      top: 6px;
+      right: 8px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--ink-soft);
+      font-size: 1rem;
+      line-height: 1;
+      padding: 2px 4px;
+      opacity: .6;
+    }
+
+    .fomo-close:hover {
+      opacity: 1;
+    }
+
+    @media(min-width:900px) {
+      .fomo {
+        bottom: 28px;
+      }
+    }
+
+
+    @media(prefers-reduced-motion:reduce) {
+      * {
+        transition: none !important
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ==================== 1. HERO ==================== -->
+  <header class="hero">
+    <div class="wrap">
+      <span class="tag">Feito especialmente pra quem vende marmita</span>
+      <h1>Quanto sobra pra você em cada marmita que você vende?</h1>
+      <p class="sub">Se a resposta é “sei mais ou menos”, tem marmita saindo da sua cozinha no prejuízo. O <strong>Preço
+          Certo</strong> é uma calculadora no celular: você põe os ingredientes que usou e ela te diz o preço mínimo
+        (pra não sair no prejuízo) e o preço ideal (com lucro).</p>
+      <a class="btn" href="#" data-cta>Quero saber meu preço agora</a>
+      <p class="btn-note">Acesso na hora · R$37, pagamento único · 7 dias de garantia</p>
+      <ul class="hero-marks">
+        <li><svg width="15" height="15" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M4 10.5l4 4 8-9" stroke="#3E6B4F" stroke-width="2.4" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg> Sem Excel</li>
+        <li><svg width="15" height="15" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M4 10.5l4 4 8-9" stroke="#3E6B4F" stroke-width="2.4" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg> Sem login nem senha</li>
+        <li><svg width="15" height="15" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M4 10.5l4 4 8-9" stroke="#3E6B4F" stroke-width="2.4" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg> Sem mensalidade</li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ==================== 2. IDENTIFICAÇÃO COM A DOR ==================== -->
+  <section class="pain">
+    <div class="wrap">
+      <h2>Você se reconhece em alguma dessas?</h2>
+      <p>Se sim, o problema não é você. É uma conta que ninguém te ensinou a fazer.</p>
+      <ul class="pain-list">
+        <li>Você vende marmita o mês inteiro, o dinheiro entra... e no fim das contas <strong>não sobra quase
+            nada</strong>.</li>
+        <li>Você olha quanto a concorrente cobra e coloca um preço parecido. <strong>No chute</strong>, torcendo pra dar
+          certo.</li>
+        <li>Toda vez que muda o cardápio, você trava: <strong>“quanto eu cobro nessa aqui?”</strong></li>
+        <li>Tem medo de aumentar o preço e o cliente sumir — então continua cobrando barato e engolindo o prejuízo.</li>
+        <li>Gás, embalagem, luz, tempero, entrega e <strong>o seu tempo em pé na cozinha</strong>: nada disso entra na
+          conta.</li>
+      </ul>
+      <p class="pain-close">Muita marmiteira não vende pouco. Vende bastante, cobrando errado.</p>
+    </div>
+  </section>
+
+  <!-- ==================== 3. A VIRADA ==================== -->
+  <section class="turn">
+    <div class="wrap">
+      <h2>Não é planilha. É calculadora.</h2>
+      <p>Já te mandaram “baixa uma planilha” alguma vez? Você abriu, viu um monte de aba, célula colorida e fórmula, e
+        fechou. Normal. <strong>Planilha não foi feita pra quem tem 30 marmitas pra fechar até as 11h.</strong></p>
+      <p>O Preço Certo é o contrário disso. Você abre o link no celular, escreve o que usou na marmita — <span
+          class="hl">arroz, frango, batata, embalagem</span> — coloca a quantidade e pronto. Ela mostra o número.</p>
+      <p>E junto vem um <strong>guia em PDF</strong> curtinho explicando de onde sai cada valor, pra você entender o que
+        está fazendo e nunca mais depender de chute.</p>
+    </div>
+  </section>
+
+  <!-- ==================== 4. COMO FUNCIONA ==================== -->
+  <section>
+    <div class="wrap wrap-wide">
+      <div class="center" style="max-width:620px;margin:0 auto 40px">
+        <h2>Como funciona na prática</h2>
+        <p style="color:var(--ink-soft)">Três passos. Leva menos tempo do que descascar uma batata.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-text">
+          <div class="step-head">
+            <div class="step-num">1</div>
+            <h3>Você põe o que usou na marmita</h3>
+          </div>
+          <p>Ingrediente por ingrediente, do jeito que você compra: 1 kg de arroz por R$6, 500 g de frango por R$14, a
+            embalagem, o tempero. Você escolhe se é grama, quilo, ml ou litro — ela entende do seu jeito.</p>
+        </div>
+        <div class="step-media">
+          <img src="img/calculadora1.png" alt="Tela de ingredientes da calculadora"
+            style="border-radius:var(--radius);box-shadow:var(--shadow);max-width:100%;">
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-text">
+          <div class="step-head">
+            <div class="step-num">2</div>
+            <h3>A calculadora faz a conta sozinha</h3>
+          </div>
+          <p>Ela quebra o preço do quilo até chegar em quanto foi usado em <strong>uma marmita só</strong>. Aquela conta
+            chata de “se 1 kg custa R$6, quanto custa 180 g?” você não precisa fazer. Nem pegar calculadora, nem lápis,
+            nem papel.</p>
+        </div>
+        <div class="step-media">
+          <img src="img/calculadora2.png" alt="Cálculo em andamento na calculadora"
+            style="border-radius:var(--radius);box-shadow:var(--shadow);max-width:100%;">
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-text">
+          <div class="step-head">
+            <div class="step-num">3</div>
+            <h3>Você recebe dois preços na tela</h3>
+          </div>
+          <p><strong>Preço mínimo:</strong> abaixo disso você está pagando pra trabalhar.<br>
+            <strong>Preço recomendado:</strong> o valor com o seu lucro dentro — aquele que você pode falar pro cliente
+            sem gaguejar.
+          </p>
+        </div>
+        <div class="step-media">
+          <img src="img/calculadora3.png" alt="Resultado final com preço mínimo e recomendado"
+            style="border-radius:var(--radius);box-shadow:var(--shadow);max-width:100%;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 5. O QUE ESTÁ INCLUSO ==================== -->
+  <section class="included">
+    <div class="wrap">
+      <h2>O que você recebe</h2>
+      <p style="color:var(--ink-soft)">Pagou, chegou. Sem esperar, sem liberação em 24h.</p>
+
+      <div class="cards-2">
+        <div class="card">
+          <div class="kicker">Item 1</div>
+          <h3>A calculadora de marmita</h3>
+          <p style="color:var(--ink-soft);margin-bottom:0">Um link direto (e um QR code, se você preferir apontar a
+            câmera). Você salva na tela do celular e usa quando quiser.</p>
+          <ul class="check">
+            <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 10.5l4 4 8-9" stroke="#3E6B4F" stroke-width="2.4" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg> Sem login, sem senha, sem cadastro</li>
+            <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 10.5l4 4 8-9" stroke="#3E6B4F" stroke-width="2.4" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg> Grama, quilo, ml e litro — você escolhe</li>
+            <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 10.5l4 4 8-9" stroke="#3E6B4F" stroke-width="2.4" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg> Acesso pra sempre, sem mensalidade</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="kicker">Item 2</div>
+          <h3>O guia em PDF</h3>
+          <p style="color:var(--ink-soft);margin-bottom:0">Curto e direto, escrito pra ler no celular enquanto o arroz
+            cozinha.</p>
+          <ul class="check">
+            <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 10.5l4 4 8-9" stroke="#3E6B4F" stroke-width="2.4" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg> Os custos que quase toda marmiteira esquece</li>
+            <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 10.5l4 4 8-9" stroke="#3E6B4F" stroke-width="2.4" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg> Como colocar o seu trabalho dentro do preço</li>
+            <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 10.5l4 4 8-9" stroke="#3E6B4F" stroke-width="2.4" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg> Como reajustar o preço sem perder cliente</li>
+            <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 10.5l4 4 8-9" stroke="#3E6B4F" stroke-width="2.4" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg> O que responder quando reclamarem do preço</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 6. POR QUE É DIFERENTE ==================== -->
+  <section>
+    <div class="wrap wrap-wide">
+      <div class="center" style="max-width:620px;margin:0 auto">
+        <h2>Por que não é “mais uma planilha”</h2>
+        <p style="color:var(--ink-soft)">A diferença não é o cálculo. É quanto tempo e quanta dor de cabeça custa chegar
+          nele.</p>
+      </div>
+      <div class="compare">
+        <div class="col bad">
+          <h3>Montando do zero numa planilha</h3>
+          <ul>
+            <li><span class="mark">×</span> Uma tarde inteira só pra deixar as fórmulas funcionando</li>
+            <li><span class="mark">×</span> Aba de custo, aba de receita, aba de resumo — e você se perde entre elas
+            </li>
+            <li><span class="mark">×</span> Encostou sem querer numa célula, quebrou tudo</li>
+            <li><span class="mark">×</span> No celular fica minúsculo, quase impossível de preencher</li>
+            <li><span class="mark">×</span> Na dúvida, você desiste e volta pro chute</li>
+          </ul>
+        </div>
+        <div class="col good">
+          <h3>Com o Preço Certo</h3>
+          <ul>
+            <li><span class="mark">✓</span> Abre o link e já está pronto pra usar</li>
+            <li><span class="mark">✓</span> Uma tela só, sem aba nenhuma</li>
+            <li><span class="mark">✓</span> Você não vê fórmula: só preenche e lê a resposta</li>
+            <li><span class="mark">✓</span> Feito pro celular desde o começo, letra grande</li>
+            <li><span class="mark">✓</span> Em 1 minuto você tem o preço da marmita nova</li>
+          </ul>
+        </div>
+      </div>
+      <p class="center" style="margin-top:28px;font-weight:600">Se você sabe pedir um lanche por aplicativo, você sabe
+        usar isso aqui.</p>
+    </div>
+  </section>
+
+
+  <section class="included">
+    <div class="wrap wrap-wide">
+      <div class="center" style="max-width:620px;margin:0 auto">
+        <h2>Quem já está usando</h2>
+        <h3> Mais de 700 marmiteiras já encontraram o caminho certo</h3>
+        <p style="color:var(--ink-soft)">Marmiteiras que pararam de cobrar no chute.</p>
+      </div>
+      <div class="tt">
+        <div class="tt-card">
+          <div class="tt-stars">★★★★★</div>
+          <p class="tt-text">Mais de 10 anos no mercado e nunca tinha visto algo assim , obrigada por esse app
+            maravilhoso </p>
+          <div class="tt-who">
+            <img class="ph-avatar" src="img/foto1.jpg" alt="Foto de Aparecida Rocha"
+              style="width:52px;height:52px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid #E8DCCB;display:block;flex:none;">
+            <div class="tt-name"><b>Aparecida Rocha</b><span>Ubiratã/MT</span></div>
+          </div>
+        </div>
+        <div class="tt-card">
+          <div class="tt-stars">★★★★★</div>
+          <p class="tt-text">Eu ganhei uma vez uma dessas planilha grátis, mas num consegui mexer nao, tava com um pouco
+            de medo, mas superou minhas espectativas por ser tao simples pra mexer</p>
+          <div class="tt-who">
+            <img class="ph-avatar" src="img/foto2.jpg" alt="Foto de Rosangela Barbosa"
+              style="width:52px;height:52px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid #E8DCCB;display:block;flex:none;">
+            <div class="tt-name"><b>Rosangela Barbosa</b><span>Ouro Preto do Oeste/RO</span></div>
+          </div>
+        </div>
+        <div class="tt-card">
+          <div class="tt-stars">★★★★★</div>
+          <p class="tt-text">Nossa, eu tava com medo de nao saber usar, mais é bem tranquilo</p>
+          <div class="tt-who">
+            <img class="ph-avatar" src="img/foto3.jpg" alt="Foto de Luciana Arruda"
+              style="width:52px;height:52px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid #E8DCCB;display:block;flex:none;">
+            <div class="tt-name"><b>Luciana Arruda</b><span>Campo Largo/PR</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 8. OFERTA E PREÇO ==================== -->
+  <section class="offer" id="oferta">
+    <div class="wrap">
+      <h2>Quanto custa parar de trabalhar de graça</h2>
+      <p>Uma marmita vendida no preço errado, todo dia, durante um mês, custa muito mais do que isso aqui.</p>
+
+      <div class="price-box">
+        <!-- TROCAR AQUI SE MUDAR O PREÇO -->
+        <div class="price-old">De R$77</div>
+        <div class="price-now">R$37</div>
+        <div class="price-cond">pagamento único · sem mensalidade · acesso vitalício</div>
+
+        <ul class="price-list">
+          <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M4 10.5l4 4 8-9" stroke="#3E6B4F" stroke-width="2.4" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg> Calculadora de marmita no celular</li>
+          <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M4 10.5l4 4 8-9" stroke="#3E6B4F" stroke-width="2.4" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg> Guia em PDF de precificação</li>
+          <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M4 10.5l4 4 8-9" stroke="#3E6B4F" stroke-width="2.4" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg> Acesso imediato depois do pagamento</li>
+          <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M4 10.5l4 4 8-9" stroke="#3E6B4F" stroke-width="2.4" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg> 7 dias de garantia — ou seu dinheiro de volta</li>
+        </ul>
+
+        <a class="btn" href="#" data-cta>Quero minha calculadora agora</a>
+        <p class="btn-note">Compra segura · Pix ou cartão </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 9. GARANTIA ==================== -->
+  <section class="guarantee">
+    <div class="wrap">
+      <div class="g-box">
+        <div class="g-seal"><b>7</b><span>dias</span></div>
+        <div>
+          <h3>Testa sem risco nenhum</h3>
+          <p>Compre, use a calculadora nas suas próprias marmitas e leia o guia. Se em <strong>7 dias</strong> você
+            achar que não valeu, é só mandar uma mensagem que eu devolvo os R$37. Sem formulário, sem justificativa, sem
+            cara feia. O risco é meu, não seu.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 10. FAQ ==================== -->
+  <section>
+    <div class="wrap">
+      <h2>Perguntas que sempre me fazem</h2>
+      <div class="faq">
+        <details open>
+          <summary>Eu não sou boa de matemática. Vou conseguir usar?</summary>
+          <div class="ans">
+            <p>Vai. Você não faz conta nenhuma — quem faz é a calculadora. Sua parte é só escrever o que usou e quanto
+              pagou. Se você consegue mandar áudio no WhatsApp, consegue usar isso aqui.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Funciona no celular?</summary>
+          <div class="ans">
+            <p>Foi feita pro celular antes de qualquer outra coisa: letra grande, campos grandes, sem apertar os olhos.
+              Funciona no Android e no iPhone, direto no navegador. Não precisa baixar app nem ocupar memória.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Preciso pagar mensalidade?</summary>
+          <div class="ans">
+            <p>Não. Você paga R$37 uma única vez e o acesso é seu pra sempre. Não tem cobrança recorrente, não tem
+              “plano”, não tem cartão salvo renovando escondido.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Precisa criar conta ou senha?</summary>
+          <div class="ans">
+            <p>Não. Depois da compra você recebe um link (e um QR code). Salva o link na tela inicial do celular e abre
+              quando quiser. Nada de e-mail e senha pra esquecer.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Serve pra marmita fitness e low carb, ou só pra marmita tradicional?</summary>
+          <div class="ans">
+            <p>Serve pras duas. A calculadora trabalha com os ingredientes que <em>você</em> digita — pode ser arroz,
+              feijão e bife, pode ser frango com brócolis e batata-doce. Se você compra e usa, ela calcula.</p>
+          </div>
+        </details>
+        <details>
+          <summary>E se eu não gostar?</summary>
+          <div class="ans">
+            <p>Você tem 7 dias pra pedir o dinheiro de volta. Manda mensagem no e-mail de suporte e o valor volta
+              integral. Só isso.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Quanto tempo leva pra chegar?</summary>
+          <div class="ans">
+            <p>Na hora. Assim que o pagamento é aprovado, o link da calculadora e o PDF caem no seu e-mail. No Pix
+              costuma levar menos de 2 minutos;</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 11. CTA FINAL ==================== -->
+  <section class="final" id="final">
+    <div class="wrap">
+      <h2>A próxima marmita que você vender pode ser no preço certo</h2>
+      <p style="color:var(--ink-soft);max-width:34em;margin:0 auto 28px">Não dá pra saber se um negócio dá lucro sem
+        saber quanto custa fazer. Em um minuto você descobre — e nunca mais precisa chutar.</p>
+      <a class="btn" href="#" data-cta>Quero saber meu preço agora</a>
+      <p class="btn-note">R$37, pagamento único · Acesso imediato · 7 dias de garantia</p>
+    </div>
+  </section>
+
+  <!-- ==================== 12. RODAPÉ ==================== -->
+  <footer>
+    <div class="wrap">
+      <p><strong style="color:#F6EFE6">Preço Certo</strong></p>
+      <p>Dúvidas ou suporte: <a href="mailto:[PREENCHER: e-mail de suporte]">[PREENCHER: e-mail de suporte]</a></p>
+      <p><a href="[PREENCHER: link dos termos de uso]">Termos de uso</a> · <a
+          href="[PREENCHER: link da política de privacidade]">Política de privacidade</a></p>
+      <p class="fine">
+        <br>
+        Este produto não garante resultado financeiro. Os valores calculados dependem das informações que você
+        inserir.<br>
+        © <span id="ano">2026</span> Preço Certo. Todos os direitos reservados.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ==================== BARRA FIXA (MOBILE) ==================== -->
+  <div class="sticky" id="sticky" aria-hidden="true">
+    <a class="btn" href="#" data-cta>Quero minha calculadora — R$37</a>
+    <div class="mini"><s>R$77</s><span>·</span><span>7 dias de garantia</span></div>
+  </div>
+
+  <script>
+    (function () {
+      // Aplica o link de checkout em todos os botões da página
+      document.querySelectorAll('[data-cta]').forEach(function (a) {
+        a.setAttribute('href', LINK_CHECKOUT);
+      });
+
+      document.getElementById('ano').textContent = new Date().getFullYear();
+
+      // Barra fixa: aparece depois do primeiro scroll, some no CTA final
+      var bar = document.getElementById('sticky');
+      var hero = document.querySelector('.hero');
+      var fim = document.getElementById('final');
+      var passouHero = false;
+      var noFim = false;
+
+      function atualiza() {
+        var mostrar = passouHero && !noFim;
+        bar.classList.toggle('on', mostrar);
+        bar.setAttribute('aria-hidden', mostrar ? 'false' : 'true');
+      }
+
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (e) {
+          passouHero = !e[0].isIntersecting;
+          atualiza();
+        }, { threshold: 0 }).observe(hero);
+
+        new IntersectionObserver(function (e) {
+          noFim = e[0].isIntersecting;
+          atualiza();
+        }, { threshold: 0 }).observe(fim);
+      } else {
+        window.addEventListener('scroll', function () {
+          passouHero = window.scrollY > (hero.offsetHeight || 400);
+          atualiza();
+        }, { passive: true });
+      }
+
+    })();
+  </script>
+
+  <!-- ==================== FOMO CARD ==================== -->
+  <div class="fomo" id="fomoCard" role="status" aria-live="polite" aria-atomic="true">
+    <button class="fomo-close" id="fomoClose" aria-label="Fechar">✕</button>
+    <div class="fomo-icon">🔥</div>
+    <div class="fomo-body">
+      <strong id="fomoText"></strong>
+      <div class="fomo-time"></div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var card = document.getElementById('fomoCard');
+      var txt  = document.getElementById('fomoText');
+      var btn  = document.getElementById('fomoClose');
+      if (!card || !txt) return;
+
+      var msgs = [
+        function (n) { return n + ' marmiteiras pararam de cobrar no chute hoje'; },
+        function (n) { return n + ' pessoas acabaram de garantir a calculadora'; },
+        function (n) { return n + ' marmiteiras já sabem o preço certo das suas marmitas'; },
+        function (n) { return n + ' compraram nas últimas 2 horas'; },
+        function (n) { return n + ' mulheres pararam de trabalhar de graça hoje'; },
+      ];
+
+      var subs = [
+        'você vai continuar no prejuízo?',
+        'e você, ainda vai cobrar no chute?',
+        'vai ficar pra trás?',
+        'quando é a sua vez?',
+      ];
+
+      function rand(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
+      var skipCycles = 0;
+      var fomoCount = 23;
+
+      function mostrar() {
+        if (skipCycles > 0) { skipCycles--; return; }
+        var m = msgs[rand(0, msgs.length - 1)];
+        var s = subs[rand(0, subs.length - 1)];
+        txt.textContent = m(fomoCount);
+        card.querySelector('.fomo-time').textContent = s;
+        card.classList.add('show');
+        setTimeout(function () { card.classList.remove('show'); }, 5000);
+        fomoCount++;
+      }
+
+      btn.addEventListener('click', function () {
+        card.classList.remove('show');
+        skipCycles = 2;
+      });
+
+      setTimeout(function () {
+        mostrar();
+        setInterval(mostrar, 12000);
+      }, 6000);
+    })();
+  </script>
+
+</body>
+
+</html>

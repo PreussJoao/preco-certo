@@ -1,0 +1,12 @@
+# Ignora tudo por padrão — só a landing page vai pro repositório
+/*
+!/.gitignore
+!/index.html
+!/img/
+/img/*
+!/img/calculadora1.png
+!/img/calculadora2.png
+!/img/calculadora3.png
+!/img/foto1.jpg
+!/img/foto2.jpg
+!/img/foto3.jpg
