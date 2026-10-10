@@ -10,3 +10,8 @@
 !/img/foto1.jpg
 !/img/foto2.jpg
 !/img/foto3.jpg
+# Webhook da Cakto (o config.php com o secret e os dados ficam só no servidor)
+!/api/
+/api/config.php
+/api/dados/*
+!/api/dados/.htaccess

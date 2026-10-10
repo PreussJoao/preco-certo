@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Preço Certo — a calculadora de preço feita pra marmiteira</title>
   <meta name="description"
-    content="Descubra em 1 minuto quanto cobrar por cada marmita, sem prejuízo e sem planilha. Calculadora no celular + guia em PDF. R$37, pagamento único.">
+    content="Descubra quanto cobrar pelas suas marmitas com uma calculadora online simples de usar. Tutorial passo a passo incluído. R$37, pagamento único.">
   <meta name="theme-color" content="#C1502E">
 
   <!-- Meta Pixel Code -->
@@ -348,6 +348,18 @@
       }
     }
 
+    .tip {
+      max-width: 620px;
+      margin: 34px auto 0;
+      background: var(--accent-soft);
+      border: 1px solid #CBDDD0;
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      text-align: center;
+      color: #2E4A38;
+      font-size: 1rem
+    }
+
     /* ---------- PLACEHOLDER DE IMAGEM (trocar por print real) ---------- */
     .ph {
       border: 2px dashed #C9B79C;
@@ -613,6 +625,20 @@
       margin-bottom: 22px
     }
 
+    .price-box .btn-note {
+      color: var(--ink-soft)
+    }
+
+    .price-what {
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: var(--brand);
+      text-align: left;
+      margin-bottom: 10px
+    }
+
     .price-list {
       list-style: none;
       padding: 0;
@@ -639,6 +665,7 @@
         padding: 36px 32px
       }
 
+      .price-what,
       .price-list {
         max-width: 26em;
         margin-left: auto;
@@ -914,17 +941,16 @@
   <header class="hero">
     <div class="wrap">
       <span class="tag">Feito especialmente pra quem vende marmita</span>
-      <h1>Quanto sobra pra você em cada marmita que você vende?</h1>
-      <p class="sub">Se a resposta é “sei mais ou menos”, tem marmita saindo da sua cozinha no prejuízo. O <strong>Preço
-          Certo</strong> é uma calculadora no celular: você põe os ingredientes que usou e ela te diz o preço mínimo
-        (pra não sair no prejuízo) e o preço ideal (com lucro).</p>
-      <a class="btn" href="#" data-cta>Quero saber meu preço agora</a>
-      <p class="btn-note">Acesso na hora · R$37, pagamento único · 7 dias de garantia</p>
+      <h1>Você sabe quanto realmente ganha em cada marmita que vende?</h1>
+      <p class="sub">Descubra quanto cobrar pelas suas marmitas com uma <strong>calculadora online</strong> simples de
+        usar. Organize seus custos, calcule seu preço de venda e aprenda tudo com um tutorial passo a passo.</p>
+      <a class="btn" href="#" data-cta>QUERO DESCOBRIR MEU PREÇO</a>
+      <p class="btn-note">Calculadora online · Fácil de usar · Tutorial incluído</p>
       <ul class="hero-marks">
         <li><svg width="15" height="15" viewBox="0 0 20 20" fill="none" aria-hidden="true">
             <path d="M4 10.5l4 4 8-9" stroke="#3E6B4F" stroke-width="2.4" stroke-linecap="round"
               stroke-linejoin="round" />
-          </svg> Sem Excel</li>
+          </svg> R$37, pagamento único</li>
         <li><svg width="15" height="15" viewBox="0 0 20 20" fill="none" aria-hidden="true">
             <path d="M4 10.5l4 4 8-9" stroke="#3E6B4F" stroke-width="2.4" stroke-linecap="round"
               stroke-linejoin="round" />
@@ -932,7 +958,7 @@
         <li><svg width="15" height="15" viewBox="0 0 20 20" fill="none" aria-hidden="true">
             <path d="M4 10.5l4 4 8-9" stroke="#3E6B4F" stroke-width="2.4" stroke-linecap="round"
               stroke-linejoin="round" />
-          </svg> Sem mensalidade</li>
+          </svg> 7 dias de garantia</li>
       </ul>
     </div>
   </header>
@@ -962,10 +988,11 @@
       <h2>Não é planilha. É calculadora.</h2>
       <p>Já te mandaram “baixa uma planilha” alguma vez? Você abriu, viu um monte de aba, célula colorida e fórmula, e
         fechou. Normal. <strong>Planilha não foi feita pra quem tem 30 marmitas pra fechar até as 11h.</strong></p>
-      <p>O Preço Certo é o contrário disso. Você abre o link no celular, escreve o que usou na marmita — <span
-          class="hl">arroz, frango, batata, embalagem</span> — coloca a quantidade e pronto. Ela mostra o número.</p>
-      <p>E junto vem um <strong>guia em PDF</strong> curtinho explicando de onde sai cada valor, pra você entender o que
-        está fazendo e nunca mais depender de chute.</p>
+      <p>O Preço Certo é o contrário disso: uma <strong>calculadora online</strong> que abre no navegador do celular.
+        Você busca o que usou na marmita — <span class="hl">arroz, frango, batata, embalagem</span> —, diz quanto pagou
+        e quanto usou, e ela faz as contas e mostra o preço.</p>
+      <p>E junto vem um <strong>tutorial passo a passo</strong> mostrando o que colocar em cada campo, tela por tela.
+        Travou em alguma parte? É só abrir o tutorial e seguir.</p>
     </div>
   </section>
 
@@ -973,21 +1000,23 @@
   <section>
     <div class="wrap wrap-wide">
       <div class="center" style="max-width:620px;margin:0 auto 40px">
-        <h2>Como funciona na prática</h2>
-        <p style="color:var(--ink-soft)">Três passos. Leva menos tempo do que descascar uma batata.</p>
+        <h2>Você não precisa entender de planilhas para usar</h2>
+        <p style="color:var(--ink-soft)">São três telas, uma depois da outra. Você preenche, a calculadora faz as contas.
+        </p>
       </div>
 
       <div class="step">
         <div class="step-text">
           <div class="step-head">
             <div class="step-num">1</div>
-            <h3>Você põe o que usou na marmita</h3>
+            <h3>Preencha os gastos do seu negócio</h3>
           </div>
-          <p>Ingrediente por ingrediente, do jeito que você compra: 1 kg de arroz por R$6, 500 g de frango por R$14, a
-            embalagem, o tempero. Você escolhe se é grama, quilo, ml ou litro — ela entende do seu jeito.</p>
+          <p>Quanto você gasta por mês com aluguel, luz, gás e internet, quantas marmitas faz por dia, quanto vale a sua
+            hora e quanto quer de lucro. Você preenche uma vez e a calculadora guarda pras próximas marmitas.</p>
         </div>
         <div class="step-media">
-          <img src="img/calculadora1.png" alt="Tela de ingredientes da calculadora"
+          <img src="img/calculadora1.png"
+            alt="Tela Negócio da calculadora: despesa fixa do mês, dias de trabalho, marmitas por dia, valor da hora e margem de lucro"
             style="border-radius:var(--radius);box-shadow:var(--shadow);max-width:100%;">
         </div>
       </div>
@@ -996,14 +1025,15 @@
         <div class="step-text">
           <div class="step-head">
             <div class="step-num">2</div>
-            <h3>A calculadora faz a conta sozinha</h3>
+            <h3>Informe os ingredientes e os custos da marmita</h3>
           </div>
-          <p>Ela quebra o preço do quilo até chegar em quanto foi usado em <strong>uma marmita só</strong>. Aquela conta
-            chata de “se 1 kg custa R$6, quanto custa 180 g?” você não precisa fazer. Nem pegar calculadora, nem lápis,
-            nem papel.</p>
+          <p>Busque cada ingrediente pelo nome — são mais de 500 na lista —, diga quanto você paga no mercado e quanto usa
+            na receita. Não achou? Dá pra adicionar o seu. No fim, coloque o custo da embalagem. A conta de “se 1 kg
+            custa tanto, quanto custa o que eu usei?” a calculadora faz sozinha.</p>
         </div>
         <div class="step-media">
-          <img src="img/calculadora2.png" alt="Cálculo em andamento na calculadora"
+          <img src="img/calculadora2.png"
+            alt="Tela Receita da calculadora: ingrediente sendo adicionado com o preço pago e a quantidade usada"
             style="border-radius:var(--radius);box-shadow:var(--shadow);max-width:100%;">
         </div>
       </div>
@@ -1012,18 +1042,21 @@
         <div class="step-text">
           <div class="step-head">
             <div class="step-num">3</div>
-            <h3>Você recebe dois preços na tela</h3>
+            <h3>Veja o custo e o preço de venda recomendado</h3>
           </div>
-          <p><strong>Preço mínimo:</strong> abaixo disso você está pagando pra trabalhar.<br>
-            <strong>Preço recomendado:</strong> o valor com o seu lucro dentro — aquele que você pode falar pro cliente
-            sem gaguejar.
-          </p>
+          <p>A calculadora mostra quanto custa cada marmita, o <strong>preço mínimo</strong> (abaixo dele você tem
+            prejuízo) e o <strong>preço recomendado</strong>, já com a sua margem de lucro. Se quiser, compare com o preço
+            que você cobra hoje.</p>
         </div>
         <div class="step-media">
-          <img src="img/calculadora3.png" alt="Resultado final com preço mínimo e recomendado"
+          <img src="img/calculadora3.png"
+            alt="Tela Preço da calculadora: preço recomendado, custo por marmita e limite mínimo"
             style="border-radius:var(--radius);box-shadow:var(--shadow);max-width:100%;">
         </div>
       </div>
+
+      <p class="tip"><strong>Tem tutorial incluído.</strong> Junto com o acesso, você recebe um passo a passo que explica
+        cada tela e cada campo da calculadora.</p>
     </div>
   </section>
 
@@ -1036,47 +1069,51 @@
       <div class="cards-2">
         <div class="card">
           <div class="kicker">Item 1</div>
-          <h3>A calculadora de marmita</h3>
-          <p style="color:var(--ink-soft);margin-bottom:0">Um link direto (e um QR code, se você preferir apontar a
-            câmera). Você salva na tela do celular e usa quando quiser.</p>
+          <h3>Calculadora Online Preço Certo</h3>
+          <p style="color:var(--ink-soft);margin-bottom:0">Abre direto no navegador do celular, pelo link que você
+            recebe. Dá pra salvar na tela inicial e usar quando quiser.</p>
           <ul class="check">
             <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true">
                 <path d="M4 10.5l4 4 8-9" stroke="#3E6B4F" stroke-width="2.4" stroke-linecap="round"
                   stroke-linejoin="round" />
-              </svg> Sem login, sem senha, sem cadastro</li>
+              </svg> Sem login, sem senha, sem baixar aplicativo</li>
             <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true">
                 <path d="M4 10.5l4 4 8-9" stroke="#3E6B4F" stroke-width="2.4" stroke-linecap="round"
                   stroke-linejoin="round" />
-              </svg> Grama, quilo, ml e litro — você escolhe</li>
+              </svg> Mais de 500 ingredientes pra buscar pelo nome</li>
             <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true">
                 <path d="M4 10.5l4 4 8-9" stroke="#3E6B4F" stroke-width="2.4" stroke-linecap="round"
                   stroke-linejoin="round" />
-              </svg> Acesso pra sempre, sem mensalidade</li>
+              </svg> Grama, quilo, ml, litro ou unidade — do jeito que você compra</li>
+            <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 10.5l4 4 8-9" stroke="#3E6B4F" stroke-width="2.4" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg> Guarda as suas marmitas no próprio celular</li>
           </ul>
         </div>
 
         <div class="card">
           <div class="kicker">Item 2</div>
-          <h3>O guia em PDF</h3>
-          <p style="color:var(--ink-soft);margin-bottom:0">Curto e direto, escrito pra ler no celular enquanto o arroz
-            cozinha.</p>
+          <h3>Tutorial de utilização</h3>
+          <p style="color:var(--ink-soft);margin-bottom:0">Um passo a passo curto, tela por tela, pra você usar a
+            calculadora sem se perder.</p>
           <ul class="check">
             <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true">
                 <path d="M4 10.5l4 4 8-9" stroke="#3E6B4F" stroke-width="2.4" stroke-linecap="round"
                   stroke-linejoin="round" />
-              </svg> Os custos que quase toda marmiteira esquece</li>
+              </svg> O que colocar em cada campo</li>
             <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true">
                 <path d="M4 10.5l4 4 8-9" stroke="#3E6B4F" stroke-width="2.4" stroke-linecap="round"
                   stroke-linejoin="round" />
-              </svg> Como colocar o seu trabalho dentro do preço</li>
+              </svg> Como buscar ingredientes e adicionar um que não está na lista</li>
             <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true">
                 <path d="M4 10.5l4 4 8-9" stroke="#3E6B4F" stroke-width="2.4" stroke-linecap="round"
                   stroke-linejoin="round" />
-              </svg> Como reajustar o preço sem perder cliente</li>
+              </svg> Como entender o preço mínimo e o preço recomendado</li>
             <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true">
                 <path d="M4 10.5l4 4 8-9" stroke="#3E6B4F" stroke-width="2.4" stroke-linecap="round"
                   stroke-linejoin="round" />
-              </svg> O que responder quando reclamarem do preço</li>
+              </svg> Como comparar com o preço que você cobra hoje</li>
           </ul>
         </div>
       </div>
@@ -1110,7 +1147,7 @@
             <li><span class="mark">✓</span> Uma tela só, sem aba nenhuma</li>
             <li><span class="mark">✓</span> Você não vê fórmula: só preenche e lê a resposta</li>
             <li><span class="mark">✓</span> Feito pro celular desde o começo, letra grande</li>
-            <li><span class="mark">✓</span> Em 1 minuto você tem o preço da marmita nova</li>
+            <li><span class="mark">✓</span> Em poucos minutos você tem o preço da marmita nova</li>
           </ul>
         </div>
       </div>
@@ -1171,29 +1208,22 @@
         <!-- TROCAR AQUI SE MUDAR O PREÇO -->
         <div class="price-old">De R$77</div>
         <div class="price-now">R$37</div>
-        <div class="price-cond">pagamento único · sem mensalidade · acesso vitalício</div>
+        <div class="price-cond">pagamento único · sem mensalidade</div>
 
+        <div class="price-what">O que você recebe</div>
         <ul class="price-list">
           <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true">
               <path d="M4 10.5l4 4 8-9" stroke="#3E6B4F" stroke-width="2.4" stroke-linecap="round"
                 stroke-linejoin="round" />
-            </svg> Calculadora de marmita no celular</li>
+            </svg> Acesso à Calculadora Online Preço Certo</li>
           <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true">
               <path d="M4 10.5l4 4 8-9" stroke="#3E6B4F" stroke-width="2.4" stroke-linecap="round"
                 stroke-linejoin="round" />
-            </svg> Guia em PDF de precificação</li>
-          <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-              <path d="M4 10.5l4 4 8-9" stroke="#3E6B4F" stroke-width="2.4" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg> Acesso imediato depois do pagamento</li>
-          <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-              <path d="M4 10.5l4 4 8-9" stroke="#3E6B4F" stroke-width="2.4" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg> 7 dias de garantia — ou seu dinheiro de volta</li>
+            </svg> Tutorial de utilização passo a passo</li>
         </ul>
 
         <a class="btn" href="#" data-cta>Quero minha calculadora agora</a>
-        <p class="btn-note">Compra segura · Pix ou cartão </p>
+        <p class="btn-note">Compra segura · Pix ou cartão · 7 dias de garantia</p>
       </div>
     </div>
   </section>
@@ -1205,7 +1235,7 @@
         <div class="g-seal"><b>7</b><span>dias</span></div>
         <div>
           <h3>Testa sem risco nenhum</h3>
-          <p>Compre, use a calculadora nas suas próprias marmitas e leia o guia. Se em <strong>7 dias</strong> você
+          <p>Compre, siga o tutorial e use a calculadora nas suas próprias marmitas. Se em <strong>7 dias</strong> você
             achar que não valeu, é só mandar uma mensagem que eu devolvo os R$37. Sem formulário, sem justificativa, sem
             cara feia. O risco é meu, não seu.</p>
         </div>
@@ -1226,6 +1256,13 @@
           </div>
         </details>
         <details>
+          <summary>Tem explicação de como usar?</summary>
+          <div class="ans">
+            <p>Tem. Junto com o acesso você recebe um tutorial passo a passo que mostra cada tela da calculadora e o que
+              colocar em cada campo. Se travar em alguma parte, é só abrir e seguir.</p>
+          </div>
+        </details>
+        <details>
           <summary>Funciona no celular?</summary>
           <div class="ans">
             <p>Foi feita pro celular antes de qualquer outra coisa: letra grande, campos grandes, sem apertar os olhos.
@@ -1235,15 +1272,15 @@
         <details>
           <summary>Preciso pagar mensalidade?</summary>
           <div class="ans">
-            <p>Não. Você paga R$37 uma única vez e o acesso é seu pra sempre. Não tem cobrança recorrente, não tem
-              “plano”, não tem cartão salvo renovando escondido.</p>
+            <p>Não. É um pagamento único de R$37. Não tem cobrança recorrente, não tem “plano”, não tem cartão salvo
+              renovando escondido.</p>
           </div>
         </details>
         <details>
           <summary>Precisa criar conta ou senha?</summary>
           <div class="ans">
-            <p>Não. Depois da compra você recebe um link (e um QR code). Salva o link na tela inicial do celular e abre
-              quando quiser. Nada de e-mail e senha pra esquecer.</p>
+            <p>Não. A calculadora abre direto no navegador, sem cadastro e sem senha. Salva o link na tela inicial do
+              celular e abre quando quiser. Nada de e-mail e senha pra esquecer.</p>
           </div>
         </details>
         <details>
@@ -1263,8 +1300,8 @@
         <details>
           <summary>Quanto tempo leva pra chegar?</summary>
           <div class="ans">
-            <p>Na hora. Assim que o pagamento é aprovado, o link da calculadora e o PDF caem no seu e-mail. No Pix
-              costuma levar menos de 2 minutos;</p>
+            <p>Na hora. Assim que o pagamento é aprovado, o acesso à calculadora e o tutorial chegam no seu e-mail. No
+              Pix costuma levar menos de 2 minutos.</p>
           </div>
         </details>
       </div>
@@ -1276,7 +1313,7 @@
     <div class="wrap">
       <h2>A próxima marmita que você vender pode ser no preço certo</h2>
       <p style="color:var(--ink-soft);max-width:34em;margin:0 auto 28px">Não dá pra saber se um negócio dá lucro sem
-        saber quanto custa fazer. Em um minuto você descobre — e nunca mais precisa chutar.</p>
+        saber quanto custa fazer. Em poucos minutos você descobre — e nunca mais precisa chutar.</p>
       <a class="btn" href="#" data-cta>Quero saber meu preço agora</a>
       <p class="btn-note">R$37, pagamento único · Acesso imediato · 7 dias de garantia</p>
     </div>
@@ -1306,9 +1343,18 @@
 
   <script>
     (function () {
-      // Aplica o link de checkout em todos os botões da página
+      // Aplica o link de checkout em todos os botões da página,
+      // repassando as UTMs (e fbclid etc.) que vieram do anúncio pra Cakto
+      var linkFinal = LINK_CHECKOUT;
+      try {
+        var url = new URL(LINK_CHECKOUT);
+        new URLSearchParams(window.location.search).forEach(function (valor, chave) {
+          if (!url.searchParams.has(chave)) url.searchParams.set(chave, valor);
+        });
+        linkFinal = url.toString();
+      } catch (e) { }
       document.querySelectorAll('[data-cta]').forEach(function (a) {
-        a.setAttribute('href', LINK_CHECKOUT);
+        a.setAttribute('href', linkFinal);
       });
 
       document.getElementById('ano').textContent = new Date().getFullYear();
@@ -1346,10 +1392,12 @@
     })();
   </script>
 
-  <!-- ==================== FOMO CARD ==================== -->
+  <!-- ==================== NOTIFICAÇÃO DE COMPRAS REAIS ====================
+     Só mostra compras aprovadas que a Cakto avisou pelo webhook (api/compra-webhook.php).
+     Sem compras nas últimas 24h, ou sem o webhook configurado, o card não aparece. -->
   <div class="fomo" id="fomoCard" role="status" aria-live="polite" aria-atomic="true">
     <button class="fomo-close" id="fomoClose" aria-label="Fechar">✕</button>
-    <div class="fomo-icon">🔥</div>
+    <div class="fomo-icon">🛒</div>
     <div class="fomo-body">
       <strong id="fomoText"></strong>
       <div class="fomo-time"></div>
@@ -1359,38 +1407,49 @@
   <script>
     (function () {
       var card = document.getElementById('fomoCard');
-      var txt  = document.getElementById('fomoText');
-      var btn  = document.getElementById('fomoClose');
-      if (!card || !txt) return;
+      var txt = document.getElementById('fomoText');
+      var btn = document.getElementById('fomoClose');
+      if (!card || !txt || !window.fetch) return;
+      var quando = card.querySelector('.fomo-time');
 
-      var msgs = [
-        function (n) { return n + ' marmiteiras pararam de cobrar no chute hoje'; },
-        function (n) { return n + ' pessoas acabaram de garantir a calculadora'; },
-        function (n) { return n + ' marmiteiras já sabem o preço certo das suas marmitas'; },
-        function (n) { return n + ' compraram nas últimas 2 horas'; },
-        function (n) { return n + ' mulheres pararam de trabalhar de graça hoje'; },
-      ];
+      var LIMITE_POR_HORA = 19;
+      var CHAVE = 'pc_notificacoes';
+      var exibidas = [];
+      try { exibidas = JSON.parse(localStorage.getItem(CHAVE)) || []; } catch (e) { }
 
-      var subs = [
-        'você vai continuar no prejuízo?',
-        'e você, ainda vai cobrar no chute?',
-        'vai ficar pra trás?',
-        'quando é a sua vez?',
-      ];
+      function podeExibir() {
+        var umaHoraAtras = Date.now() - 3600000;
+        exibidas = exibidas.filter(function (t) { return t > umaHoraAtras; });
+        return exibidas.length < LIMITE_POR_HORA;
+      }
 
-      function rand(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
+      function registrarExibicao() {
+        exibidas.push(Date.now());
+        try { localStorage.setItem(CHAVE, JSON.stringify(exibidas)); } catch (e) { }
+      }
+
+      function tempoRelativo(segundos) {
+        var min = Math.floor(segundos / 60);
+        if (min < 1) return 'agora mesmo';
+        if (min < 60) return 'há ' + min + (min === 1 ? ' minuto' : ' minutos');
+        var h = Math.floor(min / 60);
+        return 'há ' + h + (h === 1 ? ' hora' : ' horas');
+      }
+
+      var fila = [];
+      var diferencaRelogio = 0;
       var skipCycles = 0;
-      var fomoCount = 23;
 
       function mostrar() {
         if (skipCycles > 0) { skipCycles--; return; }
-        var m = msgs[rand(0, msgs.length - 1)];
-        var s = subs[rand(0, subs.length - 1)];
-        txt.textContent = m(fomoCount);
-        card.querySelector('.fomo-time').textContent = s;
+        if (!fila.length || !podeExibir()) return;
+        var t = fila.shift();
+        var agoraServidor = Date.now() / 1000 - diferencaRelogio;
+        txt.textContent = 'Alguém comprou a Calculadora Preço Certo';
+        quando.textContent = tempoRelativo(agoraServidor - t);
         card.classList.add('show');
+        registrarExibicao();
         setTimeout(function () { card.classList.remove('show'); }, 5000);
-        fomoCount++;
       }
 
       btn.addEventListener('click', function () {
@@ -1398,10 +1457,21 @@
         skipCycles = 2;
       });
 
-      setTimeout(function () {
-        mostrar();
-        setInterval(mostrar, 12000);
-      }, 6000);
+      fetch('api/compras-recentes.php')
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (d) {
+          if (!d || !d.compras || !d.compras.length) return;
+          diferencaRelogio = Date.now() / 1000 - d.agora;
+          fila = d.compras.slice();
+          setTimeout(function () {
+            mostrar();
+            var timer = setInterval(function () {
+              if (!fila.length) { clearInterval(timer); return; }
+              mostrar();
+            }, 12000);
+          }, 6000);
+        })
+        .catch(function () { });
     })();
   </script>
 
